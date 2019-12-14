@@ -83,7 +83,7 @@ class SCSICommand(_new_base_class):
             cdb = bytearray(16)
         elif 0xa0 <= opcode.value <= 0xbf:
             cdb = bytearray(12)
-        elif opcode.value == 0xea:
+        elif 0xea <= opcode.value <= 0xeb:
             cdb = bytearray(10)
         else:
             raise SCSICommand.OpcodeException
